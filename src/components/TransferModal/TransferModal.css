@@ -1,0 +1,127 @@
+/* ==========================================================================
+   TransferModal · Modal demostrativo de reserva por transferencia
+   ========================================================================== */
+
+.transfer-modal {
+  border: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.transfer-modal__header {
+  border-bottom: 1px solid rgba(109, 90, 145, 0.12);
+  background-color: var(--color-surface-alt);
+  padding: 1.25rem 1.5rem;
+}
+
+.transfer-modal__title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.transfer-modal__body {
+  padding: 1.5rem;
+}
+
+.transfer-modal__intro {
+  color: var(--color-text-light);
+  font-size: 0.98rem;
+  margin-bottom: 1.4rem;
+}
+
+/* Resumen del servicio ---------------------------------------------------- */
+.transfer-modal__summary {
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  padding: 0.4rem 1.1rem;
+  margin-bottom: 1.3rem;
+}
+
+.transfer-modal__bank {
+  border: 1px solid rgba(109, 90, 145, 0.15);
+  border-radius: var(--radius-md);
+  padding: 0.4rem 1.1rem 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.transfer-modal__bank-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+  margin: 0.85rem 0 0.5rem;
+}
+
+.transfer-modal__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed rgba(109, 90, 145, 0.15);
+}
+
+.transfer-modal__row:last-child {
+  border-bottom: none;
+}
+
+.transfer-modal__row span {
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.transfer-modal__row strong {
+  color: var(--color-text);
+  font-weight: 600;
+  text-align: right;
+}
+
+.transfer-modal__price {
+  color: var(--color-primary-dark) !important;
+  font-size: 1.15rem;
+}
+
+.transfer-modal__note {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Footer / botones -------------------------------------------------------- */
+.transfer-modal__footer {
+  border-top: 1px solid rgba(109, 90, 145, 0.12);
+  padding: 1.1rem 1.5rem;
+  gap: 0.75rem;
+}
+
+.transfer-modal__footer .btn-multi {
+  margin: 0;
+}
+
+.transfer-modal__whatsapp {
+  background-color: #25d366;
+  border-color: #25d366;
+}
+.transfer-modal__whatsapp:hover {
+  background-color: #1fb457;
+  border-color: #1fb457;
+}
+
+/* Responsive -------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .transfer-modal__footer {
+    flex-direction: column-reverse;
+  }
+
+  .transfer-modal__footer .btn-multi {
+    width: 100%;
+  }
+
+  .transfer-modal__row {
+    gap: 0.75rem;
+  }
+}

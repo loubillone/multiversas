@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Página de servicio · Constelaciones Familiares Grupales
+   Reutiliza las clases .service* de IndividualConstellation.css.
+   Aquí solo se definen las diferencias propias del encuentro grupal.
+   ========================================================================== */
+
+/* Botón de WhatsApp */
+.group-service__whatsapp {
+  background-color: #25d366;
+  border-color: #25d366;
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+  padding: 0.85rem 2.2rem;
+  font-size: 1.05rem;
+}
+
+.group-service__whatsapp:hover {
+  background-color: #1fb457;
+  border-color: #1fb457;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Texto informativo breve cerca del botón */
+.group-service__info-text {
+  margin: 1rem 0 0;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+/* Responsive -------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .group-service__whatsapp {
+    width: 100%;
+  }
+}

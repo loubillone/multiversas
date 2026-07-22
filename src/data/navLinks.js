@@ -9,9 +9,9 @@ export const mainLinks = [
 
 // Servicios de constelaciones (dropdown del navbar)
 export const constellationServices = [
-  { label: "Sesiones individuales", to: "/constelaciones#individuales" },
-  { label: "Encuentros grupales", to: "/constelaciones#grupales" },
-  { label: "Counseling", to: "/constelaciones#counseling" },
+  { label: "Sesiones individuales", to: "/constelaciones/individuales" },
+  { label: "Encuentros grupales", to: "/constelaciones/grupales" },
+  { label: "Counseling", to: "/constelaciones/counseling" },
   { label: "Talleres y encuentros", to: "/constelaciones#talleres" },
   { label: "Recursos gratuitos", to: "/constelaciones#recursos" },
 ];
