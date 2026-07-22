@@ -1,0 +1,177 @@
+/* ==========================================================================
+   ConstellationServiceCard · Tarjeta de propuesta (servicio / recurso)
+   ========================================================================== */
+
+.cs-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-surface);
+  border: 1px solid rgba(109, 90, 145, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.cs-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Imagen con proporción uniforme -------------------------------------------- */
+.cs-card__media {
+  overflow: hidden;
+}
+
+.cs-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.cs-card:hover .cs-card__image {
+  transform: scale(1.05);
+}
+
+/* Cuerpo -------------------------------------------------------------------- */
+.cs-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 1.6rem 1.6rem 1.8rem;
+}
+
+.cs-card__eyebrow {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  background-color: var(--color-surface-alt);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.9rem;
+}
+
+.cs-card__title {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.cs-card__title-link {
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.cs-card__title-link:hover {
+  color: var(--color-primary-dark);
+}
+
+.cs-card__subtitle {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.75rem;
+}
+
+.cs-card__excerpt {
+  color: var(--color-text-light);
+  font-size: 0.97rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+/* Detalles: modalidad + precio --------------------------------------------- */
+.cs-card__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.cs-card__modality {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.cs-card__modality svg {
+  color: var(--color-primary-dark);
+  flex-shrink: 0;
+}
+
+.cs-card__price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--color-primary-dark);
+  background-color: var(--color-surface-alt);
+  padding: 0.15rem 0.75rem;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.cs-card__note {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1.1rem;
+}
+
+/* CTA alineado al final ----------------------------------------------------- */
+.cs-card__cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.cs-card__cta svg {
+  transition: transform var(--transition);
+}
+
+.cs-card__cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   Variante destacada (horizontal) · Recursos gratuitos
+   ========================================================================== */
+.cs-card--featured {
+  flex-direction: column;
+}
+
+.cs-card--featured .cs-card__title {
+  font-size: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .cs-card--featured {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .cs-card--featured .cs-card__media {
+    flex: 0 0 42%;
+    max-width: 42%;
+  }
+
+  .cs-card--featured .cs-card__image {
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 320px;
+  }
+
+  .cs-card--featured .cs-card__body {
+    justify-content: center;
+    padding: 2.4rem 2.6rem;
+  }
+}
