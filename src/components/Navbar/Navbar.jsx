@@ -10,7 +10,11 @@ import {
 } from "react-bootstrap";
 import { FiShoppingBag } from "react-icons/fi";
 
-import { mainLinks, shopCategories } from "../../data/navLinks";
+import {
+  mainLinks,
+  shopCategories,
+  constellationServices,
+} from "../../data/navLinks";
 import logo from "../../assets/img/logo.webp";
 import "./Navbar.css";
 
@@ -41,6 +45,56 @@ function NavbarMultiversas() {
   const solid = scrolled || !isHome;
 
   const closeMenu = () => setExpanded(false);
+
+  // Configuración de los menús desplegables del navbar
+  const dropdowns = {
+    Constelaciones: {
+      id: "mv-constellations-dropdown",
+      items: constellationServices,
+      allLabel: "Ver todos los servicios",
+      allTo: "/constelaciones",
+    },
+    Tienda: {
+      id: "mv-shop-dropdown",
+      items: shopCategories,
+      allLabel: "Ver todos los productos",
+      allTo: "/tienda",
+    },
+  };
+
+  const renderDropdown = (label) => {
+    const { id, items, allLabel, allTo } = dropdowns[label];
+    return (
+      <NavDropdown
+        key={id}
+        title={label}
+        id={id}
+        className="mv-navbar__dropdown"
+        menuVariant="light"
+      >
+        {items.map((item) => (
+          <NavDropdown.Item
+            key={item.to}
+            as={Link}
+            to={item.to}
+            className="mv-navbar__dropdown-item"
+            onClick={closeMenu}
+          >
+            {item.label}
+          </NavDropdown.Item>
+        ))}
+        <NavDropdown.Divider />
+        <NavDropdown.Item
+          as={Link}
+          to={allTo}
+          className="mv-navbar__dropdown-item mv-navbar__dropdown-item--all"
+          onClick={closeMenu}
+        >
+          {allLabel}
+        </NavDropdown.Item>
+      </NavDropdown>
+    );
+  };
 
   return (
     <Navbar
@@ -94,35 +148,8 @@ function NavbarMultiversas() {
           <Offcanvas.Body>
             <Nav className="mv-navbar__nav ms-lg-auto align-items-lg-center">
               {mainLinks.map((link) =>
-                link.label === "Tienda" ? (
-                  <NavDropdown
-                    key={link.to}
-                    title="Tienda"
-                    id="mv-shop-dropdown"
-                    className="mv-navbar__dropdown"
-                    menuVariant="light"
-                  >
-                    {shopCategories.map((cat) => (
-                      <NavDropdown.Item
-                        key={cat.to}
-                        as={Link}
-                        to={cat.to}
-                        className="mv-navbar__dropdown-item"
-                        onClick={closeMenu}
-                      >
-                        {cat.label}
-                      </NavDropdown.Item>
-                    ))}
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item
-                      as={Link}
-                      to="/tienda"
-                      className="mv-navbar__dropdown-item mv-navbar__dropdown-item--all"
-                      onClick={closeMenu}
-                    >
-                      Ver todos los productos
-                    </NavDropdown.Item>
-                  </NavDropdown>
+                dropdowns[link.label] ? (
+                  renderDropdown(link.label)
                 ) : (
                   <Nav.Link
                     key={link.to}

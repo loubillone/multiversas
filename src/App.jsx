@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import NavbarMultiversas from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
@@ -14,6 +15,7 @@ import Cart from "./pages/Cart";
 function App() {
   return (
     <>
+      <ScrollToTop />
       <NavbarMultiversas />
       <main>
         <Routes>
