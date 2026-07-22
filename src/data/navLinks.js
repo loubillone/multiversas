@@ -13,7 +13,7 @@ export const constellationServices = [
   { label: "Encuentros grupales", to: "/constelaciones/grupales" },
   { label: "Counseling", to: "/constelaciones/counseling" },
   { label: "Talleres y encuentros", to: "/constelaciones#talleres" },
-  { label: "Recursos gratuitos", to: "/constelaciones#recursos" },
+  { label: "Recursos gratuitos", to: "/recursos" },
 ];
 
 // Categorías de la tienda (dropdown del navbar y columna del footer)

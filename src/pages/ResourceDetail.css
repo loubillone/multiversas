@@ -1,0 +1,242 @@
+/* ==========================================================================
+   Detalle de recurso gratuito · Página editorial
+   ========================================================================== */
+
+.resource {
+  padding: calc(var(--navbar-height) + 3rem) 0 5rem;
+  background:
+    radial-gradient(circle at 85% 5%, var(--color-surface-alt), transparent 40%),
+    var(--color-bg);
+}
+
+/* Ancho de lectura limitado */
+.resource__container {
+  max-width: 780px;
+}
+
+/* Encabezado -------------------------------------------------------------- */
+.resource__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.resource__eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.resource__title {
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  color: var(--color-text);
+  line-height: 1.15;
+  max-width: 16ch;
+  margin: 0 auto;
+}
+
+/* Imagen ------------------------------------------------------------------ */
+.resource__figure {
+  margin: 0 0 2.75rem;
+}
+
+.resource__image {
+  width: 100%;
+  height: clamp(280px, 42vh, 440px);
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Cuerpo editorial -------------------------------------------------------- */
+.resource__body {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--color-text);
+}
+
+.resource__lead {
+  font-size: 1.28rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 1.6rem;
+}
+
+.resource__text {
+  color: var(--color-text-light);
+  margin-bottom: 1.4rem;
+}
+
+.resource__subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  color: var(--color-primary-dark);
+  margin: 2.6rem 0 1.1rem;
+}
+
+/* Pasos del ejercicio ----------------------------------------------------- */
+.resource__steps {
+  list-style: none;
+  margin: 1.6rem 0 2rem;
+  padding: 1.8rem;
+  background-color: var(--color-surface);
+  border: 1px solid rgba(109, 90, 145, 0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.resource__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px dashed rgba(109, 90, 145, 0.15);
+}
+
+.resource__step:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.resource__step:first-child {
+  padding-top: 0;
+}
+
+.resource__step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.resource__step-text {
+  color: var(--color-text-light);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  padding-top: 3px;
+}
+
+/* Lista con viñetas ------------------------------------------------------- */
+.resource__list {
+  list-style: none;
+  margin: 1.2rem 0 1.6rem;
+  padding: 1.4rem 1.7rem;
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+}
+
+.resource__list li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 1.6rem;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.resource__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+/* Frases destacadas ------------------------------------------------------- */
+.resource__highlight {
+  margin: 2.2rem 0;
+  padding: 1.5rem 1.8rem;
+  background-color: var(--color-surface-alt);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.resource__highlight--final {
+  background-color: var(--color-accent-soft);
+  border-left-color: var(--color-accent);
+  font-size: 1.35rem;
+}
+
+/* Etiqueta pequeña (Preparación / Ejercicio) ------------------------------ */
+.resource__label {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin: 1.6rem 0 0.6rem;
+}
+
+/* Bloque "Nota personal" -------------------------------------------------- */
+.resource__note {
+  margin: 1.5rem 0 0.5rem;
+  padding: 1.2rem 1.4rem;
+  background-color: var(--color-accent-soft);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+.resource__note-title {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 0.5rem;
+}
+
+.resource__note-text {
+  color: var(--color-text);
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Bloque de ejercicio para agrupar visualmente --------------------------- */
+.resource__exercise {
+  margin-bottom: 2.5rem;
+}
+
+/* CTA final --------------------------------------------------------------- */
+.resource__cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Responsive -------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .resource__body {
+    font-size: 1.05rem;
+  }
+
+  .resource__steps {
+    padding: 1.2rem;
+  }
+
+  .resource__highlight {
+    font-size: 1.3rem;
+    padding: 1.2rem 1.3rem;
+  }
+}

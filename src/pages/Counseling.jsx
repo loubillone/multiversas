@@ -25,7 +25,7 @@ function Counseling() {
 
       <Container className="service__container">
         <Row className="align-items-center g-5">
-          <Col lg={6} className="service__content-col order-lg-1">
+          <Col lg={6} className="service__content-col">
             <span className="service__eyebrow">
               Acompañamiento después de constelar
             </span>
@@ -96,7 +96,7 @@ function Counseling() {
             </Button>
           </Col>
 
-          <Col lg={6} className="service__image-col order-lg-2">
+          <Col lg={6} className="service__image-col order-first order-lg-last">
             <div className="service__image-wrap">
               <img
                 src={serviceImg}

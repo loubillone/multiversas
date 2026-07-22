@@ -1,0 +1,116 @@
+/* ==========================================================================
+   ResourceCard · Tarjeta de recurso gratuito
+   ========================================================================== */
+
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-surface);
+  border: 1px solid rgba(109, 90, 145, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.resource-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Imagen con proporción uniforme */
+.resource-card__image-link {
+  display: block;
+  overflow: hidden;
+}
+
+.resource-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.5s ease;
+}
+
+.resource-card:hover .resource-card__image {
+  transform: scale(1.05);
+}
+
+/* Cuerpo ------------------------------------------------------------------ */
+.resource-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 1.5rem;
+}
+
+.resource-card__category {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  background-color: var(--color-surface-alt);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.9rem;
+}
+
+.resource-card__title {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.resource-card__title-link {
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.resource-card__title-link:hover {
+  color: var(--color-primary-dark);
+}
+
+.resource-card__excerpt {
+  color: var(--color-text-light);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  margin-bottom: 1.3rem;
+}
+
+/* Footer alineado al final ------------------------------------------------ */
+.resource-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(109, 90, 145, 0.15);
+}
+
+.resource-card__time {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.resource-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-primary-dark);
+  transition: gap var(--transition), color var(--transition);
+}
+
+.resource-card__link:hover {
+  color: #5a4a7c;
+  gap: 0.7rem;
+}

@@ -40,7 +40,7 @@ function GroupConstellation() {
 
       <Container className="service__container">
         <Row className="align-items-center g-5">
-          <Col lg={6} className="service__content-col order-lg-1">
+          <Col lg={6} className="service__content-col">
             <span className="service__eyebrow">Constelaciones familiares</span>
             <h1 className="service__title">Constelaciones Familiares Grupales</h1>
             <p className="service__subtitle">Un viaje de sanación en comunidad</p>
@@ -93,7 +93,7 @@ function GroupConstellation() {
             </p>
           </Col>
 
-          <Col lg={6} className="service__image-col order-lg-2">
+          <Col lg={6} className="service__image-col order-first order-lg-last">
             <div className="service__image-wrap">
               <img
                 src={serviceImg}
