@@ -15,22 +15,22 @@ import "./Footer.css";
 const contactInfo = [
   {
     icon: FaWhatsapp,
-    label: "Número de WhatsApp",
+    label: "Whatsapp",
     href: "#", // https://wa.me/<numero>
   },
   {
     icon: FaInstagram,
-    label: "Usuario de Instagram",
+    label: "Instagram",
     href: "#", // https://instagram.com/<usuario>
   },
   {
     icon: FaFacebookF,
-    label: "Usuario de Facebook",
+    label: "Facebook",
     href: "#", // https://facebook.com/<usuario>
   },
   {
     icon: FaEnvelope,
-    label: "Correo de contacto",
+    label: "Correo",
     href: "#", // mailto:<correo>
   },
 ];
