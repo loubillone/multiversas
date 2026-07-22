@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Footer · Multiversas
+   ========================================================================== */
+
+.footer {
+  position: relative;
+  background-color: var(--color-footer);
+  color: #ece5f0;
+  padding: 3.5rem 0 1.75rem;
+  margin-top: 4rem;
+}
+
+/* Separador superior sutil */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-accent),
+    var(--color-primary)
+  );
+  opacity: 0.7;
+}
+
+/* Columna identidad ------------------------------------------------------- */
+.footer__logo-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+/* Logo blanco original directamente sobre el fondo violeta, sin recuadro ni filtro */
+.footer__logo {
+  height: 104px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.footer__about {
+  color: #c9bdd4;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  max-width: 340px;
+  margin-bottom: 0;
+}
+
+/* Títulos de columna ------------------------------------------------------ */
+.footer__title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.1rem;
+}
+
+/* Listas de enlaces ------------------------------------------------------- */
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer__link {
+  color: #c9bdd4;
+  font-size: 0.94rem;
+  transition: color var(--transition), padding-left var(--transition);
+  display: inline-block;
+}
+
+.footer__link:hover {
+  color: var(--color-accent);
+  padding-left: 5px;
+}
+
+/* Contacto ---------------------------------------------------------------- */
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer__contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #c9bdd4;
+  font-size: 0.94rem;
+  transition: color var(--transition);
+}
+
+.footer__contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--color-footer-soft);
+  color: #ece5f0;
+  font-size: 1rem;
+  transition: background-color var(--transition), color var(--transition),
+    transform var(--transition);
+}
+
+.footer__contact-link:hover {
+  color: #fff;
+}
+
+.footer__contact-link:hover .footer__contact-icon {
+  background-color: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Franja inferior --------------------------------------------------------- */
+.footer__divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 2.75rem 0 1.5rem;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer__copy,
+.footer__credit {
+  color: #a99cb5;
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.footer__credit-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.footer__credit-link:hover {
+  color: var(--color-accent);
+}
+
+/* Responsive -------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .footer {
+    padding-top: 2.75rem;
+  }
+
+  .footer__about {
+    max-width: 100%;
+  }
+
+  .footer__bottom {
+    justify-content: center;
+    text-align: center;
+    gap: 0.3rem;
+  }
+}

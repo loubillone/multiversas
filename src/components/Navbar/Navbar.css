@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Navbar Multiversas
+   ========================================================================== */
+
+.mv-navbar {
+  min-height: var(--navbar-height);
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  z-index: 1030;
+  transition: background-color var(--transition), box-shadow var(--transition),
+    backdrop-filter var(--transition);
+}
+
+/* Sobre el hero: semitransparente */
+.mv-navbar--transparent {
+  background-color: rgba(250, 246, 242, 0.35);
+  backdrop-filter: blur(6px);
+  box-shadow: none;
+}
+
+/* Al hacer scroll o fuera del hero: fondo sólido con sombra ligera */
+.mv-navbar--solid {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+}
+
+.mv-navbar__container {
+  align-items: center;
+}
+
+/* Logo -------------------------------------------------------------------- */
+.mv-navbar__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Recorta el espacio transparente del archivo para que el logo no se vea diminuto */
+  height: 56px;
+  overflow: hidden;
+  padding: 0;
+  margin-right: 1.5rem;
+}
+
+.mv-navbar__logo {
+  height: 92px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  /* El logo original es blanco: lo teñimos de violeta oscuro para el fondo claro */
+  filter: brightness(0) saturate(100%) invert(31%) sepia(30%) saturate(900%)
+    hue-rotate(224deg) brightness(92%) contrast(90%);
+  transition: transform var(--transition);
+}
+
+.mv-navbar__brand:hover .mv-navbar__logo {
+  transform: scale(1.04);
+}
+
+/* Acciones (carrito + toggle) -------------------------------------------- */
+.mv-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mv-navbar__cart {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  font-size: 1.35rem;
+  transition: background-color var(--transition), color var(--transition),
+    transform var(--transition);
+}
+
+.mv-navbar__cart:hover {
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.mv-navbar__cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  background-color: var(--color-accent) !important;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.25em 0.5em;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botón hamburguesa ------------------------------------------------------- */
+.mv-navbar__toggle {
+  border: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+.mv-navbar__toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(184, 164, 212, 0.4);
+}
+
+/* Enlaces de navegación --------------------------------------------------- */
+.mv-navbar__nav {
+  gap: 0.25rem;
+}
+
+.mv-navbar__link,
+.mv-navbar__dropdown > .dropdown-toggle {
+  position: relative;
+  color: var(--color-text) !important;
+  font-weight: 600;
+  font-size: 0.96rem;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background-color var(--transition);
+}
+
+/* Subrayado sutil animado (solo escritorio) */
+.mv-navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.35rem;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+  border-radius: 2px;
+}
+
+.mv-navbar__link:hover,
+.mv-navbar__dropdown > .dropdown-toggle:hover {
+  color: var(--color-primary-dark) !important;
+}
+
+.mv-navbar__link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Enlace activo */
+.mv-navbar__link.active {
+  color: var(--color-primary-dark) !important;
+}
+.mv-navbar__link.active::after {
+  transform: scaleX(1);
+}
+
+/* Dropdown de Tienda ------------------------------------------------------ */
+.mv-navbar__dropdown .dropdown-menu {
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-alt);
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem;
+  margin-top: 0.6rem;
+  min-width: 230px;
+  animation: mv-dropdown-in 0.22s ease;
+}
+
+@keyframes mv-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mv-navbar__dropdown-item {
+  color: var(--color-text) !important;
+  font-weight: 500;
+  font-size: 0.93rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition), color var(--transition),
+    padding-left var(--transition);
+}
+
+.mv-navbar__dropdown-item:hover,
+.mv-navbar__dropdown-item:focus {
+  background-color: #fff;
+  color: var(--color-primary-dark) !important;
+  padding-left: 1.2rem;
+}
+
+.mv-navbar__dropdown-item--all {
+  font-weight: 700;
+  color: var(--color-primary-dark) !important;
+}
+
+.mv-navbar__dropdown .dropdown-divider {
+  border-top-color: rgba(109, 90, 145, 0.15);
+  margin: 0.4rem 0.5rem;
+}
+
+/* Offcanvas móvil --------------------------------------------------------- */
+.mv-offcanvas {
+  background-color: var(--color-bg);
+  max-width: 320px;
+}
+
+.mv-offcanvas__title {
+  height: 44px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.mv-offcanvas__logo {
+  height: 76px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(31%) sepia(30%) saturate(900%)
+    hue-rotate(224deg) brightness(92%) contrast(90%);
+}
+
+/* En móvil, los enlaces verticales y con más aire */
+@media (max-width: 991.98px) {
+  .mv-navbar__nav {
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+  }
+
+  .mv-navbar__link,
+  .mv-navbar__dropdown > .dropdown-toggle {
+    font-size: 1.05rem;
+    padding: 0.7rem 0.5rem !important;
+  }
+
+  .mv-navbar__link::after {
+    display: none;
+  }
+
+  .mv-navbar__dropdown .dropdown-menu {
+    box-shadow: none;
+    background-color: transparent;
+    margin-top: 0;
+    padding-left: 0.5rem;
+    animation: none;
+  }
+
+  .mv-navbar__dropdown-item {
+    padding: 0.55rem 0.75rem;
+  }
+}

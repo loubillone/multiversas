@@ -1,0 +1,211 @@
+/* ==========================================================================
+   Hero de inicio · Multiversas
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--navbar-height) + 2rem);
+  padding-bottom: 3rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 70% 20%, var(--color-secondary), transparent 60%),
+    radial-gradient(ellipse at 10% 90%, var(--color-accent-soft), transparent 55%),
+    var(--color-bg);
+}
+
+.hero__container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Formas orgánicas difuminadas ------------------------------------------- */
+.hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__blob--1 {
+  width: 380px;
+  height: 380px;
+  top: -80px;
+  right: -60px;
+  background: var(--color-primary);
+  opacity: 0.35;
+  animation: hero-float 14s ease-in-out infinite;
+}
+
+.hero__blob--2 {
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  left: -80px;
+  background: var(--color-accent);
+  opacity: 0.28;
+  animation: hero-float 18s ease-in-out infinite reverse;
+}
+
+.hero__blob--3 {
+  width: 220px;
+  height: 220px;
+  top: 40%;
+  left: 45%;
+  background: var(--color-primary-dark);
+  opacity: 0.12;
+  animation: hero-float 20s ease-in-out infinite;
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -25px); }
+}
+
+/* Texto ------------------------------------------------------------------- */
+.hero__eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.hero__title {
+  font-size: clamp(2.4rem, 5vw, 3.9rem);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1.4rem;
+  max-width: 16ch;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  color: var(--color-text-light);
+  max-width: 52ch;
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.hero__note {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
+/* Imagen ------------------------------------------------------------------ */
+.hero__image-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+}
+
+.hero__image {
+  width: 100%;
+  height: clamp(360px, 52vh, 560px);
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Tarjeta flotante decorativa */
+.hero__card {
+  position: absolute;
+  bottom: 22px;
+  left: -18px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.15rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+}
+
+.hero__card-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(216, 167, 177, 0.3);
+}
+
+/* Responsive -------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--navbar-height) + 2.5rem);
+    padding-bottom: 3.5rem;
+    text-align: center;
+  }
+
+  .hero__title,
+  .hero__subtitle {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__image {
+    height: clamp(300px, 45vh, 420px);
+    margin-top: 0.5rem;
+  }
+
+  .hero__card {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -18px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero__actions .btn-multi {
+    width: 100%;
+  }
+
+  .hero__image {
+    height: clamp(260px, 40vh, 360px);
+  }
+
+  /* La tarjeta flotante pegada a la izquierda de la imagen, sin cortar el texto */
+  .hero__card {
+    left: 14px;
+    right: auto;
+    transform: none;
+    bottom: 14px;
+    white-space: normal;
+    text-align: left;
+    justify-content: flex-start;
+    max-width: calc(100% - 28px);
+    font-size: 0.82rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* Respeta reduce-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero__blob {
+    animation: none;
+  }
+}
