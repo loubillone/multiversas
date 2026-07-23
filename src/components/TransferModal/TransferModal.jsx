@@ -93,10 +93,6 @@ function TransferModal({
             <strong>{TRANSFER_DATA.banco}</strong>
           </div>
         </div>
-
-        <p className="transfer-modal__note">
-          Datos demostrativos. Reemplazar antes de publicar la versión final.
-        </p>
       </Modal.Body>
 
       <Modal.Footer className="transfer-modal__footer">

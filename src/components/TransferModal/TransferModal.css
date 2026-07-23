@@ -84,13 +84,6 @@
   font-size: 1.15rem;
 }
 
-.transfer-modal__note {
-  font-size: 0.8rem;
-  color: var(--color-text-light);
-  font-style: italic;
-  margin: 0;
-}
-
 /* Footer / botones -------------------------------------------------------- */
 .transfer-modal__footer {
   border-top: 1px solid rgba(109, 90, 145, 0.12);
