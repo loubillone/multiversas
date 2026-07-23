@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FiMonitor, FiTag } from "react-icons/fi";
 
+import BackLink from "../components/BackLink/BackLink";
 import TransferModal from "../components/TransferModal/TransferModal";
 import serviceImg from "../assets/img/constelaciones/couseling.jpg";
 // Reutiliza la identidad visual de la página de servicio (clases .service*)
@@ -24,6 +25,7 @@ function Counseling() {
       <span className="service__blob service__blob--1" aria-hidden="true" />
 
       <Container className="service__container">
+        <BackLink to="/constelaciones" label="Volver a constelaciones" />
         <Row className="align-items-center g-5">
           <Col lg={6} className="service__content-col">
             <span className="service__eyebrow">

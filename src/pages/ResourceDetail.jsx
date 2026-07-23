@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 
+import BackLink from "../components/BackLink/BackLink";
 import ResourceShare from "../components/ResourceShare/ResourceShare";
 import { getResourceBySlug } from "../data/resources";
 import "./ResourceDetail.css";
@@ -22,6 +23,7 @@ function ResourceDetail() {
   return (
     <article className="resource">
       <Container className="resource__container">
+        <BackLink to="/recursos" label="Volver a recursos" />
         <header className="resource__header">
           <span className="resource__eyebrow">Recurso gratuito</span>
           <h1 className="resource__title">

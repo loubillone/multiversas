@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 
+import BackLink from "../components/BackLink/BackLink";
 import { getProductBySlug } from "../data/products";
 import { getCategoryBySlug } from "../data/productCategories";
 import { formatPrice } from "../utils/formatPrice";
@@ -30,6 +31,7 @@ function ProductDetail() {
     return (
       <section className="product-detail product-detail--empty">
         <Container>
+          <BackLink to="/tienda" label="Volver a la tienda" />
           <span className="product-detail__eyebrow">Multiversas Tienda</span>
           <h1 className="product-detail__title">Producto no encontrado</h1>
           <p className="product-detail__text">
@@ -48,6 +50,7 @@ function ProductDetail() {
       <span className="product-detail__blob" aria-hidden="true" />
 
       <Container className="product-detail__container">
+        <BackLink to="/tienda" label="Volver a la tienda" />
         <Row className="align-items-start g-5">
           <Col lg={6} className="product-detail__image-col">
             <div className="product-detail__image-wrap">

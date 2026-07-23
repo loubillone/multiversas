@@ -55,6 +55,7 @@ function App() {
             path="/recursos/fortalece-tu-emprendimiento"
             element={<ResourceEntrepreneurship />}
           />
+          <Route path="/talleres-y-encuentros" element={<Workshops />} />
           <Route path="/talleres" element={<Workshops />} />
           <Route path="/tienda" element={<Shop />} />
           <Route path="/producto/:slug" element={<ProductDetail />} />

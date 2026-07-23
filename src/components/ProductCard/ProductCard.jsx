@@ -45,7 +45,7 @@ function ProductCard({ product }) {
 
         {/* Etiquetas superpuestas */}
         <div className="product-card__badges">
-          {featured && (
+          {featured === true && (
             <span className="product-card__badge product-card__badge--featured">
               Destacado
             </span>

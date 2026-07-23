@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { FiSearch } from "react-icons/fi";
 
+import BackLink from "../components/BackLink/BackLink";
 import ProductCard from "../components/ProductCard/ProductCard";
 import { products } from "../data/products";
 import { productCategories } from "../data/productCategories";
@@ -55,18 +56,21 @@ function Shop() {
       {/* Encabezado --------------------------------------------------------- */}
       <header className="shop__hero">
         <span className="shop__blob" aria-hidden="true" />
-        <Container className="shop__hero-inner">
-          <span className="shop__eyebrow">Multiversas Tienda</span>
-          <h1 className="shop__hero-title">
-            Objetos creados para acompañar lo cotidiano
-          </h1>
-          <p className="shop__hero-text">
-            Una colección de piezas textiles y objetos pensados para sumar
-            color, calidez y sentido a los espacios y momentos de cada día.
-          </p>
-          <p className="shop__hero-note">
-            Explorá las categorías y encontrá aquello que conecte con vos.
-          </p>
+        <Container>
+          <BackLink to="/" label="Volver al inicio" />
+          <div className="shop__hero-inner">
+            <span className="shop__eyebrow">Multiversas Tienda</span>
+            <h1 className="shop__hero-title">
+              Objetos creados para acompañar lo cotidiano
+            </h1>
+            <p className="shop__hero-text">
+              Una colección de piezas textiles y objetos pensados para sumar
+              color, calidez y sentido a los espacios y momentos de cada día.
+            </p>
+            <p className="shop__hero-note">
+              Explorá las categorías y encontrá aquello que conecte con vos.
+            </p>
+          </div>
         </Container>
       </header>
 

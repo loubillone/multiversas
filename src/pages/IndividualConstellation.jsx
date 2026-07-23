@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FiMonitor, FiTag } from "react-icons/fi";
 
+import BackLink from "../components/BackLink/BackLink";
 import TransferModal from "../components/TransferModal/TransferModal";
 import serviceImg from "../assets/img/constelaciones/constInd3.jpeg";
 import "./IndividualConstellation.css";
@@ -23,6 +24,7 @@ function IndividualConstellation() {
       <span className="service__blob service__blob--1" aria-hidden="true" />
 
       <Container className="service__container">
+        <BackLink to="/constelaciones" label="Volver a constelaciones" />
         <Row className="align-items-center g-5">
           <Col lg={6} className="service__image-col">
             <div className="service__image-wrap">

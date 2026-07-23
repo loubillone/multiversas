@@ -1,6 +1,7 @@
 import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
 
+import BackLink from "../components/BackLink/BackLink";
 import ContactForm from "../components/ContactForm/ContactForm";
 import "./Contact.css";
 
@@ -16,7 +17,9 @@ function Contact() {
     <div className="contact">
       <header className="contact__hero">
         <span className="contact__blob" aria-hidden="true" />
-        <Container className="contact__hero-inner">
+        <Container>
+          <BackLink to="/" label="Volver al inicio" />
+          <div className="contact__hero-inner">
           <span className="contact__eyebrow">Multiversas</span>
           <h1 className="contact__hero-title">Contacto</h1>
           <p className="contact__hero-subtitle">Estoy acá para acompañarte</p>
@@ -29,6 +32,7 @@ function Contact() {
             Voy a responderte a la brevedad con toda la información que
             necesites.
           </p>
+          </div>
         </Container>
       </header>
 

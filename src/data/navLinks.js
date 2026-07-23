@@ -12,7 +12,7 @@ export const constellationServices = [
   { label: "Sesiones individuales", to: "/constelaciones/individuales" },
   { label: "Encuentros grupales", to: "/constelaciones/grupales" },
   { label: "Counseling", to: "/constelaciones/counseling" },
-  { label: "Talleres y encuentros", to: "/constelaciones#talleres" },
+  { label: "Talleres y encuentros", to: "/talleres-y-encuentros" },
   { label: "Recursos gratuitos", to: "/recursos" },
 ];
 
