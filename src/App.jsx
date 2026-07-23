@@ -16,6 +16,7 @@ import ResourceDiscoverTheme from "./pages/ResourceDiscoverTheme";
 import ResourceEntrepreneurship from "./pages/ResourceEntrepreneurship";
 import Workshops from "./pages/Workshops";
 import Shop from "./pages/Shop";
+import ProductDetail from "./pages/ProductDetail";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 
@@ -56,6 +57,7 @@ function App() {
           />
           <Route path="/talleres" element={<Workshops />} />
           <Route path="/tienda" element={<Shop />} />
+          <Route path="/producto/:slug" element={<ProductDetail />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="/carrito" element={<Cart />} />
         </Routes>
