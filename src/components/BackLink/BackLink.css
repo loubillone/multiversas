@@ -1,0 +1,27 @@
+/* ==========================================================================
+   BackLink · Enlace de regreso discreto para páginas internas
+   ========================================================================== */
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 1.35rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-text-light);
+  transition: color var(--transition);
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  color: var(--color-primary-dark);
+}
+
+.back-link__arrow {
+  line-height: 1;
+  font-size: 1.05em;
+}

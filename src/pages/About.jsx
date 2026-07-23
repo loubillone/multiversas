@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 
+import BackLink from "../components/BackLink/BackLink";
 import aboutImg from "../assets/img/constelaciones/constelacionIndividual.jpg";
 import "./About.css";
 
@@ -11,6 +12,7 @@ function About() {
   return (
     <section className="about-page">
       <Container>
+        <BackLink to="/" label="Volver al inicio" />
         <Row className="align-items-center g-5">
           <Col lg={6} className="about-page__image-col">
             <img

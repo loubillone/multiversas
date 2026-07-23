@@ -1,6 +1,7 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaWhatsapp } from "react-icons/fa";
 
+import BackLink from "../components/BackLink/BackLink";
 import ConstellationServiceCard from "../components/ConstellationServiceCard/ConstellationServiceCard";
 import {
   constellationServiceItems,
@@ -25,22 +26,25 @@ function Constellations() {
           className="constellations__blob constellations__blob--2"
           aria-hidden="true"
         />
-        <Container className="constellations__hero-inner">
-          <span className="constellations__eyebrow">
-            Constelaciones y acompañamiento
-          </span>
-          <h1 className="constellations__hero-title">
-            Propuestas para mirar tu historia desde otro lugar
-          </h1>
-          <p className="constellations__hero-text">
-            Cada proceso es diferente. Por eso, Multiversas ofrece espacios
-            individuales, encuentros grupales, acompañamiento posterior y
-            recursos gratuitos para que puedas encontrar la propuesta que mejor
-            se adapte a tu momento.
-          </p>
-          <p className="constellations__hero-note">
-            Conocé cada alternativa y elegí cómo comenzar tu recorrido.
-          </p>
+        <Container>
+          <BackLink to="/" label="Volver al inicio" />
+          <div className="constellations__hero-inner">
+            <span className="constellations__eyebrow">
+              Constelaciones y acompañamiento
+            </span>
+            <h1 className="constellations__hero-title">
+              Propuestas para mirar tu historia desde otro lugar
+            </h1>
+            <p className="constellations__hero-text">
+              Cada proceso es diferente. Por eso, Multiversas ofrece espacios
+              individuales, encuentros grupales, acompañamiento posterior y
+              recursos gratuitos para que puedas encontrar la propuesta que mejor
+              se adapte a tu momento.
+            </p>
+            <p className="constellations__hero-note">
+              Conocé cada alternativa y elegí cómo comenzar tu recorrido.
+            </p>
+          </div>
         </Container>
       </header>
 

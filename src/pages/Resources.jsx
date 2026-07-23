@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 
+import BackLink from "../components/BackLink/BackLink";
 import ResourceCard from "../components/ResourceCard/ResourceCard";
 import { resources } from "../data/resources";
 import "./Resources.css";
@@ -8,6 +9,7 @@ function Resources() {
   return (
     <section className="resources">
       <Container>
+        <BackLink to="/" label="Volver al inicio" />
         <header className="resources__header">
           <span className="resources__eyebrow">Recursos gratuitos</span>
           <h1 className="resources__title">

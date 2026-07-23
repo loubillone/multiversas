@@ -23,6 +23,7 @@
   position: relative;
   z-index: 1;
   max-width: 700px;
+  margin: 0 auto;
 }
 
 .contact__blob {
