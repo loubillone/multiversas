@@ -1,0 +1,191 @@
+/* ==========================================================================
+   Página de detalle de producto
+   ========================================================================== */
+
+.product-detail {
+  position: relative;
+  padding: calc(var(--navbar-height) + 3rem) 0 4.5rem;
+  background:
+    radial-gradient(circle at 12% 15%, var(--color-surface-alt), transparent 45%),
+    var(--color-bg);
+  overflow: hidden;
+}
+
+.product-detail--empty {
+  text-align: center;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.product-detail__container {
+  position: relative;
+  z-index: 2;
+}
+
+.product-detail__blob {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  top: -50px;
+  right: -70px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.16;
+  filter: blur(70px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Imagen ------------------------------------------------------------------ */
+.product-detail__image-wrap {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  padding: 1.2rem;
+}
+
+.product-detail__image {
+  width: 100%;
+  height: clamp(340px, 55vh, 560px);
+  object-fit: contain;
+  object-position: center;
+  border-radius: var(--radius-md);
+}
+
+/* Contenido --------------------------------------------------------------- */
+.product-detail__eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.product-detail__title {
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.15;
+}
+
+.product-detail__tagline {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--color-accent);
+  margin-bottom: 1.4rem;
+}
+
+.product-detail__text {
+  color: var(--color-text-light);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin-bottom: 1.3rem;
+}
+
+.product-detail__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.product-detail__features li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--color-text);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.product-detail__features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background-color: var(--color-primary-dark);
+}
+
+/* Precios y stock --------------------------------------------------------- */
+.product-detail__pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.4rem;
+  background-color: var(--color-surface);
+  border: 1px solid rgba(109, 90, 145, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.product-detail__price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.product-detail__stock {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  margin-top: 0.2rem;
+}
+
+.product-detail__preparation {
+  margin: 0 0 1.4rem;
+  padding: 0.95rem 1.15rem;
+  background-color: var(--color-accent-soft);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.product-detail__note {
+  margin: 0 0 1.4rem;
+  padding: 0.9rem 1.1rem;
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text-light);
+}
+
+.product-detail__closing {
+  margin: 0 0 1.8rem;
+  padding: 1.1rem 1.3rem;
+  border-left: 4px solid var(--color-accent);
+  background-color: var(--color-accent-soft);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-text);
+}
+
+.product-detail__buy {
+  min-width: 200px;
+}
+
+@media (max-width: 575.98px) {
+  .product-detail__buy {
+    width: 100%;
+  }
+
+  .product-detail__image-wrap {
+    padding: 0.8rem;
+  }
+}

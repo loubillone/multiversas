@@ -10,11 +10,7 @@ import {
 } from "react-bootstrap";
 import { FiShoppingBag } from "react-icons/fi";
 
-import {
-  mainLinks,
-  shopCategories,
-  constellationServices,
-} from "../../data/navLinks";
+import { mainLinks, constellationServices } from "../../data/navLinks";
 import logo from "../../assets/img/logo.webp";
 import "./Navbar.css";
 
@@ -53,12 +49,6 @@ function NavbarMultiversas() {
       items: constellationServices,
       allLabel: "Ver todos los servicios",
       allTo: "/constelaciones",
-    },
-    Tienda: {
-      id: "mv-shop-dropdown",
-      items: shopCategories,
-      allLabel: "Ver todos los productos",
-      allTo: "/tienda",
     },
   };
 
