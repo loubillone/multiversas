@@ -1,0 +1,43 @@
+/* ==========================================================================
+   ConstellationsPreview · Bloque resumido de constelaciones en el Home
+   ========================================================================== */
+
+.constellations-preview {
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+  background:
+    radial-gradient(circle at 80% 20%, var(--color-surface-alt), transparent 50%),
+    var(--color-bg);
+}
+
+.constellations-preview__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.constellations-preview__title {
+  font-size: clamp(1.75rem, 3.8vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 1.1rem;
+}
+
+.constellations-preview__text {
+  color: var(--color-text-light);
+  font-size: 1.08rem;
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+}
+
+.constellations-preview__inner .btn-multi svg {
+  transition: transform var(--transition);
+}
+
+.constellations-preview__inner .btn-multi:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 575.98px) {
+  .constellations-preview__inner .btn-multi {
+    width: 100%;
+  }
+}
