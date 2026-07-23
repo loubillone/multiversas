@@ -1,22 +1,14 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
 
 import ContactForm from "../components/ContactForm/ContactForm";
-import ContactInfo from "../components/ContactInfo/ContactInfo";
 import "./Contact.css";
 
-const fadeLeft = {
-  initial: { opacity: 0, x: -24 },
-  whileInView: { opacity: 1, x: 0 },
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.55, ease: "easeOut" },
-};
-
-const fadeRight = {
-  initial: { opacity: 0, x: 24 },
-  whileInView: { opacity: 1, x: 0 },
-  viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.55, ease: "easeOut", delay: 0.08 },
+  transition: { duration: 0.5, ease: "easeOut" },
 };
 
 function Contact() {
@@ -41,20 +33,10 @@ function Contact() {
       </header>
 
       <Container className="contact__content">
-        <Row className="g-4 g-lg-5 align-items-start">
-          <Col lg={7}>
-            <motion.div {...fadeLeft} className="contact__panel">
-              <h2 className="contact__panel-title">Escribime</h2>
-              <ContactForm />
-            </motion.div>
-          </Col>
-
-          <Col lg={5}>
-            <motion.div {...fadeRight}>
-              <ContactInfo />
-            </motion.div>
-          </Col>
-        </Row>
+        <motion.div {...fadeUp} className="contact__panel">
+          <h2 className="contact__panel-title">Escribime</h2>
+          <ContactForm />
+        </motion.div>
 
         <p className="contact__closing">
           Gracias por acercarte a Multiversas. Cada mensaje es el comienzo de un
